@@ -1,0 +1,123 @@
+/******** Reset *********/
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+:root {
+  --wine: rgb(159, 42, 61);
+  --soft-wine: rgba(159, 42, 62, 0.226);
+  --parrot: #e0989940;
+  --medium: #b4353527;
+}
+
+/******* Main section *********/
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.title {
+    color: black;
+    position: absolute;
+    left: 24px;
+    top: 24px;
+  }
+
+.leaderboard {
+  height: 70%;
+  width: 70%;
+  display: flex;
+}
+
+.recent-scores {
+  flex-basis: 60%;
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.refresh {
+  width: 100px;
+  height: 36px;
+  border: 2px solid black;
+  padding: 5px;
+  cursor: pointer;
+  transform: all 1s ease-in-out;
+  text-align: center;
+}
+
+.refresh:hover {
+  transform: scale(1.1)
+}
+
+.title-container {
+  display: flex;
+  justify-content: space-between;
+  margin: 24px;
+  width: 90%;
+}
+
+.scores-list {
+  list-style: none;
+  width: 90%;
+}
+
+.score-information {
+  padding-left: 5%;
+  height: 36px;
+  border: 1px solid black;
+  display: flex;
+  align-items: center;
+}
+
+.score-information:nth-child(even) {
+  background-color: rgba(128, 128, 128, 0.427);
+}
+
+.add-your-scores {
+  flex-basis: 40%;
+  border: 1px solid black;
+  border-left: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+}
+
+.input {
+  height: 36px;
+  width: 80%;
+  margin-left: 12px;
+  margin-right: 12px;
+  padding-left: 12px;
+}
+
+.submit-container {
+  width: 100%;
+  text-align: right;
+}
+
+.submit {
+  width: 100px;
+  height: 36px;
+  background: none;
+  margin-right: 10%;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.submit:hover {
+  transform: scale(1.1)
+}
