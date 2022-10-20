@@ -27,11 +27,11 @@ body {
 }
 
 .title {
-    color: black;
-    position: absolute;
-    left: 24px;
-    top: 24px;
-  }
+  color: black;
+  position: absolute;
+  left: 24px;
+  top: 24px;
+}
 
 .leaderboard {
   height: 70%;
@@ -53,12 +53,12 @@ body {
   border: 2px solid black;
   padding: 5px;
   cursor: pointer;
-  transform: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
   text-align: center;
 }
 
 .refresh:hover {
-  transform: scale(1.1)
+  transform: scale(1.1);
 }
 
 .title-container {
@@ -126,7 +126,7 @@ body {
 }
 
 .submit:hover {
-  transform: scale(1.1)
+  transform: scale(1.1);
 }
 
 .error {
