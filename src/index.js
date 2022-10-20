@@ -1,12 +1,11 @@
 import './style.css';
 import addScore from './modules/add-score'
-import LocalStorage from './modules/Local-storage'
 import displayScores from './modules/display-scores'
-import refresh from './modules/refresh'
+import LeaderboardApi from './modules/leaderboard-API'
 
 // Function to display scores
 
-let recentScores = LocalStorage.getScores()
+let recentScores = LeaderboardApi.getScores()
 
 displayScores(recentScores)
 
@@ -24,20 +23,3 @@ submitBtn.addEventListener('click', (e) => {
 })
 
 // Add event listener to refreshBtn
-
-const refreshBtn = document.querySelector('.refresh')
-
-refreshBtn.addEventListener('click', refresh)
-
-
-fetch('https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/', {
-  method: 'POST',
-  body: JSON.stringify({
-    "name": "carrera's game" 
-  }),
-  headers: {
-    'Content-type': 'application/json; charset=UTF-8',
-  },
-})
-  .then((response) => response.json())
-  .then((json) => console.log(json));

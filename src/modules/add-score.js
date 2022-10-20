@@ -1,14 +1,27 @@
-import NewScore from './new-score'
-import LocalStorage from './Local-storage'
+
+import LeaderboardApi from './leaderboard-API'
 import displayScores from './display-scores'
+
 // Function to display a new score 
 
 const addScore = (name, score) => {
-    const recentScores = LocalStorage.getScores();
-    const newScore = new NewScore(name, score)
-    recentScores.push(newScore);
+
+    fetch('https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/v8GE9MRTBXXJYcKrLNZf/scores/', {
+        method: 'POST',
+        body: JSON.stringify({
+            "user": name,
+            "score": score
+          }),
+        headers: {
+            'Content-type': 'application/json; charset=UTF-8',
+          },
+        })
+        .then((response) => response.json())
+        .then((json) => console.log(json))    
+
+    let recentScores = LeaderboardApi.getRecentScores();
     displayScores(recentScores);
-    localStorage.setItem('recentScores', JSON.stringify(recentScores));
+
   }
 
 export default addScore
