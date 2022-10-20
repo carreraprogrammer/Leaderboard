@@ -7,6 +7,7 @@ import refresh from './modules/refresh'
 // Function to display scores
 
 let recentScores = LocalStorage.getScores()
+
 displayScores(recentScores)
 
 // Add event listener to submitBtn
@@ -27,3 +28,16 @@ submitBtn.addEventListener('click', (e) => {
 const refreshBtn = document.querySelector('.refresh')
 
 refreshBtn.addEventListener('click', refresh)
+
+
+fetch('https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/', {
+  method: 'POST',
+  body: JSON.stringify({
+    "name": "carrera's game" 
+  }),
+  headers: {
+    'Content-type': 'application/json; charset=UTF-8',
+  },
+})
+  .then((response) => response.json())
+  .then((json) => console.log(json));
