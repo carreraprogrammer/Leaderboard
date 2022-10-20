@@ -79,10 +79,15 @@ body {
   border: 1px solid black;
   display: flex;
   align-items: center;
+  border-top: none;
 }
 
 .score-information:nth-child(even) {
   background-color: rgba(128, 128, 128, 0.427);
+}
+
+.score-information:nth-child(1) {
+  border-top: 1px solid black;
 }
 
 .add-your-scores {
