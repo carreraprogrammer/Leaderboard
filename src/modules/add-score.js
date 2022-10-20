@@ -1,5 +1,3 @@
-import displayScores from './display-scores.js';
-
 // Function to display a new score
 
 const addScore = async (name, score) => {
@@ -10,8 +8,6 @@ const addScore = async (name, score) => {
       'Content-type': 'application/json; charset=UTF-8',
     },
   });
-
-  displayScores();
 };
 
 export default addScore;
