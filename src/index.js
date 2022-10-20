@@ -10,15 +10,19 @@ const name = document.querySelector('#name-input');
 const score = document.querySelector('#score-input');
 
 submitBtn.addEventListener('click', (e) => {
+   if(name.value.length > 0 && score.value.length > 0){
     e.preventDefault()
     addScore(name.value, score.value)
     const result = LeaderboardApi.getScores()
     console.log(result)
     name.value = '';
     score.value = '';
+    error.classList.add('ocult')
+   } else {
+    const error = document.querySelector('.error');
+    error.classList.remove('ocult')
+   }
 })
-
-displayScores()
 
 // Add event to refresh button
 

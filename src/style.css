@@ -71,6 +71,8 @@ body {
 .scores-list {
   list-style: none;
   width: 90%;
+  max-height: 75%;
+  overflow-y: scroll;
 }
 
 .score-information {
@@ -125,4 +127,18 @@ body {
 
 .submit:hover {
   transform: scale(1.1)
+}
+
+.error {
+  border: 1px solid black;
+  width: 50%;
+  height: 36px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(128, 128, 128, 0.427);
+}
+
+.ocult {
+  display: none;
 }
