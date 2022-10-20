@@ -3,16 +3,18 @@
 
 export default class LeaderboardApi {
 
-    static getScores() {
+    static async getScores() {
+
         let recentScores =
-        fetch('https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/v8GE9MRTBXXJYcKrLNZf/scores/', {
+        await fetch('https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/v8GE9MRTBXXJYcKrLNZf/scores/', {
             method: 'GET',
             headers: {
                 'Content-type': 'application/json; charset=UTF-8',
               },
             })
             .then((response) => response.json())
-            .then((json) => console.log(json))    
+             
         return recentScores      
+        
     }
 }
