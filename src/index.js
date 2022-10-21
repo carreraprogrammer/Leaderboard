@@ -35,4 +35,6 @@ displayScores();
 
 // Add game
 
-game();
+const startBtn = document.querySelector('.start');
+
+startBtn.addEventListener('click', game);

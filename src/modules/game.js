@@ -1,7 +1,7 @@
 /* eslint-disable */
 // Game
 const game = () => {
-    const canvas = document.getElementById('canvas-top');
+const canvas = document.getElementById('canvas-top');
 const ctx = canvas.getContext('2d');
 let gameState = {
   rectPosX: 10,
@@ -83,7 +83,7 @@ function update() {
     gameState.enemySpeed *= 1.019;
     gameState.enemyTimeoutInit *= 0.999;
     // console.log('timeout:'+gameState.enemyTimeoutInit);
-    // console.log('speed:'+gameState.enemySpeed);
+    // console.log('speed:'+gameState.npenemySpeed);
   }
   ctx.fillStyle = '#FF0000';
   gameState.rectPosX += gameState.rectVelocity.x;
@@ -132,7 +132,15 @@ function update() {
     ctx.fillRect(gameState.friends[i].x, gameState.friends[i].y, 5, 5);
   }
   if (checkCollision(gameState) == true) {
-
+    let newScore = gameState.score;
+    const inputScore = document.querySelector('#score-input');
+    const inputName = document.querySelector('#name-input');
+    const input = document.querySelector('.input');
+    const crashm = document.querySelector('.crash-m')
+    crashm.classList.remove('ocult');
+    inputScore.classList.add('crash');
+    setTimeout(() => { crashm.classList.add('ocult');; }, 5000);
+    inputScore.value = newScore;
     gameState = {
       rectPosX: 10,
       rectPosY: canvas.height / 2 - 10,

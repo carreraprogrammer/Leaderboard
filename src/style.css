@@ -129,6 +129,10 @@ body {
   padding-left: 12px;
 }
 
+.input.crash {
+  border: 2px solid red;
+}
+
 .submit-container {
   width: 100%;
   text-align: right;
@@ -172,6 +176,7 @@ canvas {
   border-style: solid;
   width: 100%;
   margin: 30px;
+  margin-bottom: 0;
   margin-left: 0;
   padding: 0px;
   border: 1px solid black;
@@ -197,4 +202,25 @@ canvas {
   width: 100%;
   padding-top: 5px;
   padding-bottom: 5px;
+}
+
+.crash-m {
+  border: 2px dotted red;
+  padding: 5px;
+  font-size: 12px;
+}
+
+.start {
+  width: 100px;
+  height: 36px;
+  background: none;
+  cursor: pointer;
+  margin-top: 12px;
+  margin-bottom: 12px;
+  transition: all 0.3s ease-in-out;
+}
+
+.start:hover {
+  border: 2px solid var(--red);
+  transform: scale(1.1);
 }
