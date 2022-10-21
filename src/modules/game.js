@@ -54,7 +54,7 @@ function checkCollision(gameState) {
       10,
     );
     if (playerCollider.isColliding(enemyCollider)) {
-      return true;
+      return true;    
     }
   }
   for (let i = 0; i < gameState.friends.length; ++i) {
@@ -132,6 +132,7 @@ function update() {
     ctx.fillRect(gameState.friends[i].x, gameState.friends[i].y, 5, 5);
   }
   if (checkCollision(gameState) == true) {
+
     gameState = {
       rectPosX: 10,
       rectPosY: canvas.height / 2 - 10,
@@ -145,6 +146,7 @@ function update() {
       friendAdded: false,
       score: 0,
     };
+
   }
 }
 setInterval(update, 20);
