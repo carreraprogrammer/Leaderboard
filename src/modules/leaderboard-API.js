@@ -1,3 +1,4 @@
+/* eslint-disable linebreak-style */
 // "Game with ID: v8GE9MRTBXXJYcKrLNZf added."
 
 export default class LeaderboardApi {

@@ -4,18 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Leaderboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;1,400&family=Walter+Turncoat&display=swap" rel="stylesheet">
 <script defer src="/runtime.bundle.js"></script><script defer src="/main.bundle.js"></script></head>
 <body>
-    <h1 class="title">Leaderboard</h1>
+    <div class="title">
+      <h1>Red Box Leaderboard</h1>
+    </div>
+    
     <section class="leaderboard">
         <div class="recent-scores">
             <div class="title-container">
                 <h2 class="recent-scores-title">Recent Scores</h2>
                 <a class="refresh">Refresh</a>
             </div>
-            <ul class="scores-list">
+            <table class="scores-list">
+                <thead class="thead">
+                    <tr>
+                      <th>ID</th>
+                      <th>Name</th>
+                      <th>Score</th>
+                    </tr>
+                  </thead>
+                <tbody class="tbody">
 
-            </ul>
+                </tbody>
+            </table>
         </div>
         <div class="add-your-scores">
             <div class="title-container-2">
@@ -26,7 +41,17 @@
             <div class="submit-container">
                 <button type="submit" class="submit">Submit</button>    
             </div>    
+            <div class="error ocult">Please fill all the fields</div>
+            <div class="game center">
+                <div class="canvas-wrapper">
+                  <p id="score"></p>
+                  <canvas id="canvas-top"></canvas>
+                </div>
+                <div>Use arrow keys to catch the red points</div>
+                
+              </div>
         </div>
     </section>
+    <script src="./modules/game.js"></script>
 </body>
 </html>

@@ -1,3 +1,4 @@
+/* eslint-disable linebreak-style */
 // Function to display a new score
 
 const addScore = async (name, score) => {
