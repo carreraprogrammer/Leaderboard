@@ -1,29 +1,28 @@
 import './style.css';
-import addScore from './modules/add-score'
-import LocalStorage from './modules/Local-storage'
-import displayScores from './modules/display-scores'
-import refresh from './modules/refresh'
+import addScore from './modules/add-score.js';
+import displayScores from './modules/display-scores.js';
 
-// Function to display scores
+// Add event to submit button
 
-let recentScores = LocalStorage.getScores()
-displayScores(recentScores)
-
-// Add event listener to submitBtn
-
-const submitBtn = document.querySelector('.submit')
-const name = document.querySelector('#name-input')
-const score = document.querySelector('#score-input')
+const submitBtn = document.querySelector('.submit');
+const name = document.querySelector('#name-input');
+const score = document.querySelector('#score-input');
 
 submitBtn.addEventListener('click', (e) => {
-    e.preventDefault()
-    addScore(name.value, score.value)
-    name.value = ''
-    score.value = ''
-})
+  const error = document.querySelector('.error');
+  if (name.value.length > 0 && score.value.length > 0) {
+    e.preventDefault();
+    addScore(name.value, score.value);
+    name.value = '';
+    score.value = '';
+    error.classList.add('ocult');
+  } else {
+    error.classList.remove('ocult');
+  }
+});
 
-// Add event listener to refreshBtn
+// Add event to refresh button
 
-const refreshBtn = document.querySelector('.refresh')
+const refreshBtn = document.querySelector('.refresh');
 
-refreshBtn.addEventListener('click', refresh)
+refreshBtn.addEventListener('click', displayScores);

@@ -27,11 +27,11 @@ body {
 }
 
 .title {
-    color: black;
-    position: absolute;
-    left: 24px;
-    top: 24px;
-  }
+  color: black;
+  position: absolute;
+  left: 24px;
+  top: 24px;
+}
 
 .leaderboard {
   height: 70%;
@@ -53,12 +53,12 @@ body {
   border: 2px solid black;
   padding: 5px;
   cursor: pointer;
-  transform: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
   text-align: center;
 }
 
 .refresh:hover {
-  transform: scale(1.1)
+  transform: scale(1.1);
 }
 
 .title-container {
@@ -71,6 +71,8 @@ body {
 .scores-list {
   list-style: none;
   width: 90%;
+  max-height: 75%;
+  overflow-y: scroll;
 }
 
 .score-information {
@@ -79,10 +81,15 @@ body {
   border: 1px solid black;
   display: flex;
   align-items: center;
+  border-top: none;
 }
 
 .score-information:nth-child(even) {
   background-color: rgba(128, 128, 128, 0.427);
+}
+
+.score-information:nth-child(1) {
+  border-top: 1px solid black;
 }
 
 .add-your-scores {
@@ -119,5 +126,19 @@ body {
 }
 
 .submit:hover {
-  transform: scale(1.1)
+  transform: scale(1.1);
+}
+
+.error {
+  border: 1px solid black;
+  width: 50%;
+  height: 36px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(128, 128, 128, 0.427);
+}
+
+.ocult {
+  display: none;
 }
