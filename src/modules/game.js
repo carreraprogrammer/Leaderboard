@@ -114,7 +114,7 @@ const game = () => {
     for (let i = 0; i < gameState.enemies.length; i += 1) {
       if (gameState.enemies[i].x < -10) {
         gameState.enemies.splice(i, 1);
-        gameState.score++;
+        gameState.score += 1;
       }
     }
     document.getElementById('score').innerHTML = `score: ${gameState.score}`;
