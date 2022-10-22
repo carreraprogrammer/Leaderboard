@@ -176,7 +176,7 @@ canvas {
   margin: 30px;
   margin-bottom: 0;
   margin-left: 0;
-  padding: 0px;
+  padding: 0;
   border: 1px solid black;
   background-color: black;
 }
@@ -191,8 +191,8 @@ canvas {
 
 #score {
   position: absolute;
-  top: 0px;
-  left: 0px;
+  top: 0;
+  left: 0;
 }
 
 .description {
