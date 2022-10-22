@@ -170,6 +170,9 @@ const game = () => {
       case 'ArrowDown':
         gameState.rectVelocity.y = gameState.playerSpeed;
         break;
+      default:
+        gameState.rectVelocity = 0;
+        break;
     }
   });
 };
