@@ -157,22 +157,19 @@ const game = () => {
   }
   setInterval(update, 20);
   document.addEventListener('keydown', (event) => {
-    if (event.keyCode ==== 39) {
-    // right arrow
-      gameState.rectVelocity.x = gameState.playerSpeed;
-    }
-    if (event.keyCode ==== 37) {
-    // left arrow
-      gameState.rectVelocity.x = -gameState.playerSpeed;
-    }
-    if (event.keyCode ==== 40) {
-    // up arrow
-      gameState.rectVelocity.y = gameState.playerSpeed;
-    }
-    if (event.keyCode ==== 38) {
-    // down arrow
-
-      gameState.rectVelocity.y = -gameState.playerSpeed;
+    switch (event.key) {
+      case 'ArrowLeft':
+        gameState.rectVelocity.x = -gameState.playerSpeed;
+        break;
+      case 'ArrowRight':
+        gameState.rectVelocity.x = gameState.playerSpeed;
+        break;
+      case 'ArrowUp':
+        gameState.rectVelocity.y = -gameState.playerSpeed;
+        break;
+      case 'ArrowDown':
+        gameState.rectVelocity.y = gameState.playerSpeed;
+        break;
     }
   });
 };
