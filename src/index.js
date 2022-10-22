@@ -1,6 +1,8 @@
+/* eslint-disable linebreak-style */
 import './style.css';
 import addScore from './modules/add-score.js';
 import displayScores from './modules/display-scores.js';
+import game from './modules/game.js';
 
 // Add event to submit button
 
@@ -26,3 +28,13 @@ submitBtn.addEventListener('click', (e) => {
 const refreshBtn = document.querySelector('.refresh');
 
 refreshBtn.addEventListener('click', displayScores);
+
+// Display scores
+
+displayScores();
+
+// Add game
+
+const startBtn = document.querySelector('.start');
+
+startBtn.addEventListener('click', game);

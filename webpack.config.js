@@ -17,17 +17,22 @@ module.exports = {
     clean: true,
     publicPath: '/',
   },
-    module: {
+    module:   {
     rules: [
       {
         test: /\.css$/i,
         use: ['style-loader', 'css-loader'],
+      }, 
+      {
+        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        type: 'asset',
       },
     ],
   },
   mode,
   devServer: {
     static: './dist',
+    historyApiFallback: true
   },
   optimization: {
     runtimeChunk: 'single',

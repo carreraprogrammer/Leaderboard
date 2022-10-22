@@ -1,5 +1,3 @@
-/******** Reset *********/
-
 *,
 *::before,
 *::after {
@@ -11,8 +9,8 @@
 }
 
 :root {
-  --wine: rgb(159, 42, 61);
-  --soft-wine: rgba(159, 42, 62, 0.226);
+  --red: red;
+  --soft-red: rgba(255, 0, 0, 0.098);
   --parrot: #e0989940;
   --medium: #b4353527;
 }
@@ -24,19 +22,30 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
+  font-family: 'Ubuntu', sans-serif;
+  background-color: black;
 }
 
 .title {
-  color: black;
   position: absolute;
-  left: 24px;
-  top: 24px;
+  top: 0;
+  height: 60px;
+  padding-left: 24px;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  font-family: 'Walter Turncoat', cursive;
+  border: 2px solid red;
+  color: white;
 }
 
 .leaderboard {
-  height: 70%;
+  height: 80%;
   width: 70%;
   display: flex;
+  margin-top: 36px;
+  border: 2px solid red;
+  background-color: white;
 }
 
 .recent-scores {
@@ -45,6 +54,14 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+}
+
+.thead {
+  height: 36px;
+  font-size: 1.5rem;
+  background-color: var(--red);
+  color: white;
 }
 
 .refresh {
@@ -53,12 +70,14 @@ body {
   border: 2px solid black;
   padding: 5px;
   cursor: pointer;
-  transition: all 1s ease-in-out;
+  /* stylelint-disable-next-line csstree/validator */
+  transform: all 1s ease-in-out;
   text-align: center;
 }
 
 .refresh:hover {
   transform: scale(1.1);
+  border: 2px solid red;
 }
 
 .title-container {
@@ -71,21 +90,18 @@ body {
 .scores-list {
   list-style: none;
   width: 90%;
-  max-height: 75%;
-  overflow-y: scroll;
+  max-height: 80%;
+  border: 1px solid black;
 }
 
 .score-information {
   padding-left: 5%;
   height: 36px;
-  border: 1px solid black;
-  display: flex;
-  align-items: center;
-  border-top: none;
+  text-align: center;
 }
 
 .score-information:nth-child(even) {
-  background-color: rgba(128, 128, 128, 0.427);
+  background-color: var(--soft-red);
 }
 
 .score-information:nth-child(1) {
@@ -111,6 +127,10 @@ body {
   padding-left: 12px;
 }
 
+.input.crash {
+  border: 2px solid red;
+}
+
 .submit-container {
   width: 100%;
   text-align: right;
@@ -126,6 +146,7 @@ body {
 }
 
 .submit:hover {
+  border: 2px solid var(--red);
   transform: scale(1.1);
 }
 
@@ -141,4 +162,63 @@ body {
 
 .ocult {
   display: none;
+}
+
+/* HERE START THE GAME */
+
+canvas {
+  width: 100%;
+}
+
+.canvas-wrapper {
+  border-style: solid;
+  width: 100%;
+  margin: 30px;
+  margin-bottom: 0;
+  margin-left: 0;
+  padding: 0;
+  border: 1px solid black;
+  background-color: black;
+}
+
+.center {
+  text-align: center;
+}
+
+.game {
+  position: relative;
+}
+
+#score {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.description {
+  border: 1px dotted red;
+  width: 100%;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.crash-m {
+  border: 2px dotted red;
+  padding: 5px;
+  font-size: 12px;
+}
+
+.start {
+  width: 100px;
+  height: 36px;
+  background: none;
+  cursor: pointer;
+  margin-top: 12px;
+  margin-bottom: 12px;
+  transition: all 0.3s ease-in-out;
+}
+
+.start:hover {
+  border: 2px solid var(--red);
+  transform: scale(1.1);
 }
