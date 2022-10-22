@@ -32,6 +32,7 @@ module.exports = {
   mode,
   devServer: {
     static: './dist',
+    historyApiFallback: true
   },
   optimization: {
     runtimeChunk: 'single',

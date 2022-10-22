@@ -7,6 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;1,400&family=Walter+Turncoat&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/321e54ee43.js" crossorigin="anonymous"></script>
 <script defer src="/runtime.bundle.js"></script><script defer src="/main.bundle.js"></script></head>
 <body>
     <div class="title">
@@ -36,6 +37,7 @@
             <div class="title-container-2">
                 <h2 class="recent-scores-title">Add Your Score</h2>
             </div>
+            <div class="crash-m ocult">Please, put your name below and submit your score  <i class="fa-solid fa-arrow-down"></i></div>
             <input type="text" class="input" id="name-input" placeholder="Your name">
             <input type="text" class="input" id="score-input" placeholder="Your Score">
             <div class="submit-container">
@@ -47,10 +49,12 @@
                   <p id="score"></p>
                   <canvas id="canvas-top"></canvas>
                 </div>
-                <div>Use arrow keys to catch the red points</div>
-                
+                <div class="description">Use arrow keys to catch the red squares</div>
+                <button class="start">Start Game!</button>   
               </div>
+             
         </div>
+        
     </section>
     <script src="./modules/game.js"></script>
 </body>
