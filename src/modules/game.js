@@ -39,6 +39,7 @@ const game = () => {
       return false;
     }
   }
+  // eslint-disable-next-line consistent-return
   function checkCollision(gameState) {
     const playerCollider = new RectCollider(
       gameState.rectPosX,
@@ -46,7 +47,7 @@ const game = () => {
       10,
       10,
     );
-    for (let i = 0; i < gameState.enemies.length; ++i) {
+    for (let i = 0; i < gameState.enemies.length; i += 1) {
       const enemyCollider = new RectCollider(
         gameState.enemies[i].x,
         gameState.enemies[i].y,
@@ -57,7 +58,7 @@ const game = () => {
         return true;
       }
     }
-    for (let i = 0; i < gameState.friends.length; ++i) {
+    for (let i = 0; i < gameState.friends.length; i += 1) {
       const friendCollider = new RectCollider(
         gameState.friends[i].x,
         gameState.friends[i].y,
@@ -73,7 +74,7 @@ const game = () => {
   function update() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     gameState.enemyTimeout -= 1;
-    if (gameState.enemyTimeout == 0) {
+    if (gameState.enemyTimeout === 0) {
       gameState.enemyTimeout = Math.floor(gameState.enemyTimeoutInit);
       gameState.enemies.push({
         x: canvas.width,
@@ -106,36 +107,34 @@ const game = () => {
     }
     ctx.fillRect(gameState.rectPosX, gameState.rectPosY, 10, 10);
     ctx.fillStyle = '#0000FF';
-    for (let i = 0; i < gameState.enemies.length; ++i) {
+    for (let i = 0; i < gameState.enemies.length; i += 1) {
       gameState.enemies[i].x -= gameState.enemies[i].velocity;
       ctx.fillRect(gameState.enemies[i].x, gameState.enemies[i].y, 10, 10);
     }
-    for (let i = 0; i < gameState.enemies.length; ++i) {
+    for (let i = 0; i < gameState.enemies.length; i += 1) {
       if (gameState.enemies[i].x < -10) {
         gameState.enemies.splice(i, 1);
         gameState.score++;
       }
     }
     document.getElementById('score').innerHTML = `score: ${gameState.score}`;
-    if (gameState.score % 10 == 0 && gameState.friendAdded == false) {
+    if (gameState.score % 10 === 0 && gameState.friendAdded === false) {
       gameState.friends.push({
         x: random(canvas.width - 20),
         y: random(canvas.height - 20),
       });
       gameState.friendAdded = true;
     }
-    if (gameState.score % 10 == 1 && gameState.friendAdded == true) {
+    if (gameState.score % 10 === 1 && gameState.friendAdded === true) {
       gameState.friendAdded = false;
     }
-    for (let i = 0; i < gameState.friends.length; ++i) {
+    for (let i = 0; i < gameState.friends.length; i += 1) {
       ctx.fillStyle = '#FF0000';
       ctx.fillRect(gameState.friends[i].x, gameState.friends[i].y, 5, 5);
     }
-    if (checkCollision(gameState) == true) {
+    if (checkCollision(gameState) === true) {
       const newScore = gameState.score;
       const inputScore = document.querySelector('#score-input');
-      const inputName = document.querySelector('#name-input');
-      const input = document.querySelector('.input');
       const crashm = document.querySelector('.crash-m');
       crashm.classList.remove('ocult');
       inputScore.classList.add('crash');
@@ -158,19 +157,19 @@ const game = () => {
   }
   setInterval(update, 20);
   document.addEventListener('keydown', (event) => {
-    if (event.keyCode === 39) {
+    if (event.keyCode ==== 39) {
     // right arrow
       gameState.rectVelocity.x = gameState.playerSpeed;
     }
-    if (event.keyCode === 37) {
+    if (event.keyCode ==== 37) {
     // left arrow
       gameState.rectVelocity.x = -gameState.playerSpeed;
     }
-    if (event.keyCode === 40) {
+    if (event.keyCode ==== 40) {
     // up arrow
       gameState.rectVelocity.y = gameState.playerSpeed;
     }
-    if (event.keyCode === 38) {
+    if (event.keyCode ==== 38) {
     // down arrow
 
       gameState.rectVelocity.y = -gameState.playerSpeed;
