@@ -1,3 +1,4 @@
+/* eslint-disable linebreak-style */
 // Game
 
 const game = () => {
@@ -16,9 +17,11 @@ const game = () => {
     friendAdded: false,
     score: 0,
   };
+
   function random(n) {
     return Math.floor(Math.random() * n);
   }
+
   class RectCollider {
     constructor(x, y, width, height) {
       this.x = x;
@@ -153,6 +156,9 @@ const game = () => {
         friendAdded: false,
         score: 0,
       };
+      const game = document.querySelector('.game');
+      game.classList.remove('game');
+      game.classList.remove('center');
     }
   }
   setInterval(update, 20);
